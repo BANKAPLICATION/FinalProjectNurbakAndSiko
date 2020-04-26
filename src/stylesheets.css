@@ -1,0 +1,24 @@
+.Forgotbutton{
+    -fx-text-fill: #a3a3a3;
+}
+.Forgotbutton:hover{
+    -fx-text-fill: #6747CD;
+    -fx-underline: true;
+}
+.SigninButton{
+    -fx-background-color: #6747CD;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 10px;
+}
+.SigninButton:hover{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-text-fill: #6747CD ;
+    -fx-border-color: #6747CD;
+    -fx-border-width: 1px ;
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+}
+.RegisterButton:hover{
+    -fx-text-fill: #ff1c1c ;
+}

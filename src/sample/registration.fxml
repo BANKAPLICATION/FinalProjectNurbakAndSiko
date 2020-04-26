@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXSnackbar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleNode?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="VB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="550.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegistrationController">
+    <children>
+        <Button fx:id="Exitbutton" layoutX="346.0" layoutY="118.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="25.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="-3.0" AnchorPane.topAnchor="-1.0">
+            <graphic>
+                <FontAwesomeIcon fx:id="closebtn1" glyphName="ARROW_LEFT" size="1.3em" wrappingWidth="14.142857551574707" />
+            </graphic></Button>
+        <ImageView fitHeight="69.0" fitWidth="161.0" layoutX="61.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imange/n.jpeg" />
+            </image>
+        </ImageView>
+        <Label layoutX="64.0" layoutY="93.0" text="Registration Form" textFill="#545454">
+            <font>
+                <Font name="Impact" size="24.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" contentDisplay="TOP" layoutX="52.0" layoutY="121.0" prefHeight="18.0" prefWidth="206.0" text="Fill the form for registration" textFill="#a3a3a3">
+            <font>
+                <Font name="Ebrima Bold" size="14.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="loginField" focusColor="#6747cd" labelFloat="true" layoutX="52.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Enter Username" unFocusColor="#6747cd">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXPasswordField fx:id="passwrodField" focusColor="#6747cd" labelFloat="true" layoutX="52.0" layoutY="264.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Enter Password" unFocusColor="#6747cd">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXPasswordField>
+        <Button fx:id="Registrbutton" layoutX="46.0" layoutY="620.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="300.0" style="-fx-text-fill: #E7E7E7; -fx-border-color: #6747cd; -fx-border-width: 1px; -fx-border-style: solid; -fx-background-color: #5C4AB5; -fx-background-radius: 10px;" styleClass="LognBtn" text="Register">
+            <font>
+                <Font name="Segoe UI Bold" size="14.0" />
+            </font>
+        </Button>
+        <JFXComboBox fx:id="ChoiceBoxRegion" labelFloat="true" layoutX="217.0" layoutY="325.0" prefHeight="25.0" prefWidth="104.0" unFocusColor="#4059a9" />
+        <JFXComboBox fx:id="ChoiceBoxNumberPhone" labelFloat="true" layoutX="217.0" layoutY="370.0" prefHeight="40.0" prefWidth="104.0" unFocusColor="#4059a9" />
+        <JFXToggleNode fx:id="RegionLabel" layoutX="40.0" layoutY="330.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="149.0" style="-fx-underline: true;" text="Choice Your Region :" textFill="#4a3d45" AnchorPane.bottomAnchor="330.0">
+            <font>
+                <Font name="Ebrima" size="14.0" />
+            </font>
+        </JFXToggleNode>
+        <JFXToggleNode fx:id="OperatorLabel" layoutX="38.0" layoutY="390.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="163.0" style="-fx-underline: true;" text="Choice Your Operator :" textFill="#4a3d45">
+            <font>
+                <Font name="Ebrima" size="14.0" />
+            </font>
+        </JFXToggleNode>
+        <JFXSnackbar layoutX="532.0" layoutY="217.0" />
+        <JFXTextField fx:id="numberPhoneField" focusColor="#6747cd" labelFloat="true" layoutX="46.0" layoutY="438.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Enter Your Number Phone" unFocusColor="#6747cd">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="answerField" focusColor="#6747cd" labelFloat="true" layoutX="46.0" layoutY="505.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Your best friend?" unFocusColor="#6747cd">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXDatePicker fx:id="Date" defaultColor="#6747cd" layoutX="46.0" layoutY="570.0" prefHeight="28.0" prefWidth="338.0" />
+        <Button fx:id="closebtn" layoutX="522.0" mnemonicParsing="false" style="-fx-background-color: white;" AnchorPane.bottomAnchor="666.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0">
+            <graphic>
+                <FontAwesomeIcon glyphName="CLOSE" size="1.3em" />
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>
+
+

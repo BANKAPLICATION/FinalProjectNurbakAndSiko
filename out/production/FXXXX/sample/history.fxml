@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HistoryController">
+   <children>
+      <Label fx:id="labelHistory" layoutX="286.0" layoutY="22.0" text="History">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="HistoryTableView" layoutX="100.0" layoutY="71.0" prefHeight="200.0" prefWidth="387.0">
+        <columns>
+          <TableColumn fx:id="TableColumnId" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="TableColumnLogin" prefWidth="75.0" text="Login" />
+            <TableColumn fx:id="TableColumnTransfer" prefWidth="75.0" text="Transfer" />
+            <TableColumn fx:id="TableColumnTime" prefWidth="75.0" text="Time" />
+            <TableColumn fx:id="CreditTableColumn" prefWidth="75.0" text="Credit" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
