@@ -1,5 +1,4 @@
 
-
 package Server;
 import sample.Employee;
 import sample.Schets;
@@ -11,7 +10,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 public class Request implements Serializable {
-    private  String valuta;
+    private String valuta;
     private String email;
     private String operationType;
     private String login;
@@ -22,6 +21,15 @@ public class Request implements Serializable {
     private LocalDate date;
     private String answer;
     private int userid;
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "operationType='" + operationType + '\'' +
+                '}';
+    }
+
+
     private int amount;
     private String senderPhone;
     private String recipient;
@@ -53,15 +61,9 @@ public class Request implements Serializable {
     public LocalDate getDate() {
         return date;
     }
+
     public String getAnswer() {
         return answer;
-    }
-
-    @Override
-    public String toString() {
-        return "Request{" +
-                "operationType='" + operationType + '\'' +
-                '}';
     }
 
     public int getUserid() {

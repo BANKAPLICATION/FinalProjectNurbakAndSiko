@@ -40,6 +40,7 @@ public class HistoryController {
     private ObservableList <History> t_list = FXCollections.observableArrayList();
 
     public void initialize() {
+
         TableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         TableColumnLogin.setCellValueFactory(new PropertyValueFactory<>("Login"));
         TableColumnTransfer.setCellValueFactory(new PropertyValueFactory<>("Transfer"));
@@ -48,5 +49,7 @@ public class HistoryController {
         o_list.setAll(list);
         t_list.setAll(list1);
         HistoryTableView.setItems(t_list);
+
     }
+
 }

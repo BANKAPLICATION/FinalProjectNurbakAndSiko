@@ -1,18 +1,25 @@
 package sample;
 
 import java.sql.Date;
+import java.sql.Time;
 
 public class History {
     private int userid;
     private String transfer;
-    private Date date;
+    private Time time;
     private int credit;
     private String login;
 
-    public History( int userid, String transfer, Date date, int credit, String login) {
+    public History( int userid, String transfer, Time time, int credit, String login) {
         this.userid = userid;
         this.transfer = transfer;
-        this.date = date;
+        this.time = time;
+        this.credit = credit;
+        this.login = login;
+    }
+    public History(int userid,Time time,int credit,String login) {
+        this.userid = userid;
+        this.time = time;
         this.credit = credit;
         this.login = login;
     }
@@ -33,14 +40,13 @@ public class History {
         this.transfer = transfer;
     }
 
-    public Date getDate() {
-        return date;
+    public Time getTime() {
+        return time;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTime(Time time) {
+        this.time = time;
     }
-
 
     public int getCredit() {
         return credit;
@@ -58,12 +64,13 @@ public class History {
         this.login = login;
     }
 
+
     @Override
     public String toString() {
         return "History{" +
-                ", userid=" + userid +
+                "userid=" + userid +
                 ", transfer='" + transfer + '\'' +
-                ", date=" + date +
+                ", time=" + time +
                 ", credit=" + credit +
                 ", login='" + login + '\'' +
                 '}';

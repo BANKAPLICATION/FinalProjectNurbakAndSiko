@@ -64,10 +64,11 @@ public class RegistrationController {
     ObservableList <String> list1 = FXCollections.observableArrayList();
     private ClientHandler clientHandler = new ClientHandler();
     public void initialize() throws IOException {
-        ArrayList <User> users = new ArrayList<>();
+            ArrayList <User> users = new ArrayList<>();
         clientHandler.writeRequest("GET_USERS");
         if (clientHandler.checkRequest("USERS_GOT")) {
             users = ClientHandler.users;
+            System.out.println("nagan kirgish");
         }
         System.out.println(users);
         RegionloadData();
@@ -101,7 +102,7 @@ public class RegistrationController {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setContentText("You are Registered!!!");
                             alert.showAndWait();
-//                            database.addUser(nickname, password, city, numberPhone, operator, date, answer);
+//        socket                    database.addUser(nickname, password, city, numberPhone, operator, date, answer);
                             clientHandler.writeRequest("ADD_USER",nickname,password,city,numberPhone,operator,date,answer);
                             loginField.setText("");
                             passwrodField.setText("");
@@ -115,7 +116,7 @@ public class RegistrationController {
                     catch (Exception e) {
 
                         Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("Date is empty!!!");
+                        alert.setContentText("One ComboBox is empty!!!");
                         alert.showAndWait();
                         loginField.setText("");
                         passwrodField.setText("");

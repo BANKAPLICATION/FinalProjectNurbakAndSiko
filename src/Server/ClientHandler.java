@@ -7,6 +7,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 public class ClientHandler {
+
     private static ObjectOutputStream oos;
     private static ObjectInputStream ois;
     public static ArrayList<User> users;
@@ -21,27 +22,35 @@ public class ClientHandler {
             e.printStackTrace();
         }
     }
+
     public void writeRequest(String operationType) throws IOException {
         oos.writeObject(new Request(operationType));
     }
+
     public void writeRequest(String operationType,String login, String password) throws IOException {
         oos.writeObject(new Request(operationType,login,password));
     }
+
     public void writeRequest(String operationType, int id, String email) throws IOException {
         oos.writeObject(new Request(operationType,id,email));
     }
+
     public void writeRequest(String operationType, int id,String valuta,int amount) throws IOException {
         oos.writeObject(new Request(operationType,id,valuta,amount));
     }
+
     public void writeRequest(String operationType, String login, String password, String city, String numberphone, String operator, LocalDate date, String answer ) throws IOException {
         oos.writeObject(new Request(operationType,login,password,city,numberphone,operator,date,answer));
     }
+
     public void writeRequest(String operationType,int userid,int amount) throws IOException {
         oos.writeObject(new Request(operationType,userid,amount));
     }
+
     public void writeRequest(String operationType, String senderPhone, String recipient, int amount) throws IOException {
         oos.writeObject(new Request(operationType,senderPhone,recipient,amount));
     }
+
     public void writeRequest(String operationType, User user) throws IOException {
         oos.writeObject(new Request(operationType,user));
     }
@@ -58,7 +67,7 @@ public class ClientHandler {
         oos.writeObject(new Request(operationType,newPassword,id));
     }
     public void writeRequest(String operationType, ArrayList <User> users, ArrayList <Schets> schets, ArrayList <Employee> employees) throws IOException {
-        oos.writeObject(new Request(operationType,users,schets,employees));
+            oos.writeObject(new Request(operationType,users,schets,employees));
     }
     public boolean checkRequest(String operationType) {
         try {

@@ -4,10 +4,11 @@ import java.net.Socket;
 public class Server {
     public static void main(String[] args) {
         try {
-            ServerSocket ss = new ServerSocket(12345);
+            ServerSocket ss = new ServerSocket(23456);
             while (true) {
                 System.out.println("Waiting for a new client!");
                 Socket s = ss.accept();
+
                 System.out.println("Client connected!");
                 ServerRunnable sr = new ServerRunnable(s);
                 sr.start();

@@ -92,5 +92,23 @@
                 <Button fx:id="TranslateButton" layoutX="236.0" layoutY="290.0" mnemonicParsing="false" text="TRANSLATE" />
             </children>
         </AnchorPane>
+      <AnchorPane fx:id="HistoryAnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="labelHistory" layoutX="286.0" layoutY="22.0" text="History">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="HistoryTableView" layoutX="100.0" layoutY="71.0" prefHeight="200.0" prefWidth="387.0">
+               <columns>
+                  <TableColumn fx:id="TableColumnId" prefWidth="75.0" text="id" />
+                  <TableColumn fx:id="TableColumnLogin" prefWidth="63.0" text="Login" />
+                  <TableColumn fx:id="TableColumnTransfer" prefWidth="99.0" text="Transfer" />
+                  <TableColumn fx:id="TableColumnTime" prefWidth="63.0" text="Time" />
+                  <TableColumn fx:id="CreditTableColumn" prefWidth="75.0" text="Credit" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
     </children>
 </AnchorPane>

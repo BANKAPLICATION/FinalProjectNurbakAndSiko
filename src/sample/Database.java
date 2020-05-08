@@ -11,10 +11,8 @@ import java.util.Scanner;
 public class Database {
 
     public static ArrayList <User> users = new ArrayList<>();
-
     public static ArrayList <Employee> employees = new ArrayList<>();
     public static ArrayList <Schets> schets = new ArrayList<>();
-
     public static ArrayList<Employee> getEmployees() {
         return employees;
     }
@@ -130,20 +128,34 @@ public class Database {
         }
         return users;
     }
+    public void addHistoryWithCredit(History history) {
+        try {
+            ps = connection.prepareStatement("INSERT INTO history(userid,time,credit,login) VALUES(?,?,?,?)");
+            ps.setInt(1,history.getUserid());
+            ps.setTime(2,history.getTime());
+            ps.setInt(3,history.getCredit());
+            ps.setString(4,history.getLogin());
+            ps.executeUpdate();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public ArrayList <History> getHistory() {
         ArrayList <History> histories = new ArrayList<>();
         try {
-            ps = connection.prepareStatement("SELECT * FROM users");
+            ps = connection.prepareStatement("SELECT * FROM history");
             rs = ps.executeQuery();
             while (rs.next()) {
                 int userid = rs.getInt("userid");
                 String login = rs.getString("login");
                 System.out.println(login);
-                String operation = rs.getString("operation");
+                String transfer = rs.getString("transfer");
                 System.out.println(password);
-                Date date = rs.getDate("time");
+                Time time = rs.getTime("time");
                 int credit = rs.getInt("credit");
-                histories.add(new History(userid,operation,date,credit,login));
+                System.out.println(userid);
+                histories.add(new History(userid,transfer,time,credit,login));
             }
             return histories;
         }
@@ -255,6 +267,7 @@ public class Database {
     public static int userid = -1;
     public static int oldAmount = 0;
     public static int amount1 = 0;
+    private static Database database = new Database();
     public int Transfer(String senderPhone, String recipient, int amount) {
         try {
             ps = connection.prepareStatement("SELECT * FROM users");
@@ -284,6 +297,7 @@ public class Database {
                                     if (recipientPhone.equals(recipient)) {
                                         String recipientLogin = rs.getString("login");
                                         id = rs.getInt("id");
+                                        saveLoginRecipeintForHistory(recipientLogin);
                                         ps = connection.prepareStatement("SELECT * FROM schets");
                                         rs = ps.executeQuery();
                                         while (rs.next()) {
@@ -324,10 +338,24 @@ public class Database {
         }
         return amount1;
     }
-
+    static String returner;
+    public static void saveLoginRecipeintForHistory(String recipientLogin) {
+        returner = recipientLogin;
+    }
+    public static String getLoginRecipeintForHistory() {
+        return returner;
+    }
+    public static int credit1;
+    public static void saveCredit(int credit) {
+        credit1 = credit;
+    }
+    public static int getCredit() {
+        return credit1;
+    }
     public boolean admin(String login,String password) {
         try {
-            ps = connection.prepareStatement("SELECT * FROM admin"); {
+            ps = connection.prepareStatement("SELECT * FROM admin");
+            {
                 rs = ps.executeQuery();
                 while (rs.next()) {
                     int id = rs.getInt("id");
@@ -338,11 +366,24 @@ public class Database {
                     }
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public void addHistoryWithTransfer(History history) {
+        try {
+            ps = connection.prepareStatement("INSERT INTO history(userid,transfer,time,credit,login) VALUES(?,?,?,?,?)");
+            ps.setInt(1,history.getUserid());
+            ps.setString(2,history.getTransfer());
+            ps.setTime(3,history.getTime());
+            ps.setInt(4,history.getCredit());
+            ps.setString(5,history.getLogin());
+            ps.executeUpdate();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
     }
     public void addUserWithEmail(User user) {
         try {

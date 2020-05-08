@@ -15,7 +15,7 @@ public class Main extends Application {
         public static Socket socket;
         static {
             try {
-                socket = new Socket("127.0.0.1",12345);
+                socket = new Socket("127.0.0.1",23456);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -28,7 +28,6 @@ public class Main extends Application {
         primaryStage.show();
         primaryStage.setResizable(false);
         //primaryStage.setFullScreen(true);
-
     }
 
 
